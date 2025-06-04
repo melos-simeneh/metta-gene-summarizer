@@ -1,0 +1,14 @@
+services:
+  # Build-only service to generate the gene summarizer image
+  gene-image-builder:
+    build: .
+    image: gene-summarizer-image
+    profiles: ["core"]
+
+  # Service to run the Metta gene summarizer
+  summarizer-metta:
+    image: gene-summarizer-image:latest
+    container_name: metta-gene-summarizer
+    command: metta main.metta
+    volumes:
+      - .:/app   # Use only for development; remove in production
