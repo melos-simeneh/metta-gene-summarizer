@@ -26,8 +26,6 @@ def format_gene_info(gene_expr):
                        f"    Raw expression: {gene_expr}\n" + "-" * 70
 
     gene_id, gene_type, chromosome, start, end, gene_name, synonyms_expr,summary_expr = parts
-    print(type(synonyms_expr),synonyms_expr)
-    # synonyms = extract_synonyms(synonyms_expr)
     synonyms = extract_synonyms_for_list(synonyms_expr)
     summary=extract_summary(summary_expr)
 
@@ -143,8 +141,6 @@ def format_gene_summary_atoms(gene_summary):
     gene_tuple = gene_exp.get_children()
 
     g, gene_type, chr_, start, end, name, syns = gene_tuple
-    print("XXXXX")
-    print(type(syns),syns)
     gene = E(S("gene"), S(str(g)))
     return [
         gene,
