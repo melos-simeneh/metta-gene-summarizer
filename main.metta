@@ -1,5 +1,4 @@
 ; Import required namespaces
-; !(import! &summary data:gene_with_summary)
 !(import! &self data:gene)
 !(import! &self utils)
 
@@ -31,18 +30,6 @@
 ; 2. Summarize it using Gemini
 ; 3. Write the summarized output to a file
 ; ------------------------------------------------------------------------------
-; !(let* 
-;   (
-;    ($raw_data (extract_gene_data))
-;    ($summarized_data (summarize_gene_data $raw_data))
-;    ($result (write_summary $summarized_data gene_with_summary.metta))
-;   )
-;   ($result)
-; )
-
-
-
-
 !(let* 
   (
    ($raw_data (extract_gene_data))
@@ -74,7 +61,6 @@
     )
 )
 
-; !(gene_data_with_summary)
 ; ------------------------------------------------------------------------------
 ; Save full summary to a human-readable text file
 ; ------------------------------------------------------------------------------
