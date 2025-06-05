@@ -18,14 +18,14 @@ This project provides a workflow for extracting, summarizing, and formatting gen
 
 ## Setup
 
-1. **Clone the repository:**C
+### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/melos-simeneh/metta-gene-summarizer.git
 cd metta-gene-summarizer
 ```
 
-2. **Create and activate a virtual environment, then install dependencies:**
+### 2. Create and activate a virtual environment, then install dependencies:
 
 ```bash
 python -m venv venv
@@ -36,7 +36,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. **Set up environment variables:**
+### 3. Set up environment variables:
 
 Create a .env file in the root directory and add your Gemini API key:
 
@@ -44,8 +44,17 @@ Create a .env file in the root directory and add your Gemini API key:
 GENAI_API_KEY=your_api_key_here
 ```
 
-**Run the Metta workflow:**
+### 4. Run the Metta workflow
 
 ```bash
 metta main.metta
+```
+
+## Alternative: Run with Docker
+
+If you're unable to install `hyperon` locally, you can use Docker:
+
+```bash
+docker compose build  gene-image-builder
+docker comose up -d
 ```
