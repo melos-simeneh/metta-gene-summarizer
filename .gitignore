@@ -1,2 +1,4 @@
 __pycache__/
 .env
+gene_with_summary*
+gene_summary_result*
