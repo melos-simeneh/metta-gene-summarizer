@@ -1,6 +1,7 @@
 !(import! &self data:gene)
 !(import! &self utils)
 
+
 ; This matches gene-related facts and extracts structured information about each gene.
 (= (extract_gene_data) 
     (match &self
@@ -21,10 +22,12 @@
 ; Execute the extraction function to retrieve structured gene information
 ; !(extract_gene_data)
 
+
 !(let* 
   (
    ($x (extract_gene_data))
    ($y (summarize_gene_data $x))
+   ($z (write_summary $y gene_with_summary.metta))
   )
-  ($y)
+  ($z)
 )
